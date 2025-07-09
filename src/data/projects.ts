@@ -1,4 +1,15 @@
-export const projects = [
+// ✅ Define the Project interface
+export interface Project {
+  title: string;
+  description: string;
+  tech: string[];
+  image: string;
+  link: string;
+  linkedIn: string;
+}
+
+// ✅ Export typed project list
+export const projects: Project[] = [
   {
     title: "AFTERLIFE INNOVATIONS",
     description: "A sustainable climate technology product manufacturing startup aiming to revolutionize battery recycling by developing sustainable solutions that address the environmental and health risks associated with improper disposal. With the rapidly growing demand for electric vehicles and portable electronics, the market for batteries recycling is projected to grow substantially, presenting a significant economic opportunity.",
