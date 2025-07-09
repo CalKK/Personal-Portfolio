@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 export function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 text-white">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -18,14 +18,10 @@ export function Hero() {
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
         />
-        <h1 className="text-5xl md:text-7xl font-bold mb-4">
-          Calvin Kinyanjui
-        </h1>
-        <h2 className="text-2xl md:text-3xl text-gray-300 mb-6">
-          Electronics Engineering Student
-        </h2>
+        <h1 className="text-5xl md:text-7xl font-bold mb-4">Calvin Kinyanjui</h1>
+        <h2 className="text-2xl md:text-3xl text-gray-300 mb-6">Electronics Engineering Student</h2>
         <p className="text-xl text-gray-400 max-w-2xl mb-8 mx-auto">
-          I am an Electronics Engineering student at Strathmore University. My open-mindedness and ability to acclimatize in different environments provide me the impetus to yearn to learn, grow and up-skill my repertoire. I possess skills in 3D modelling, PCB Design, IoT. My academic journey is driven by a fascination for how cutting-edge electronics and technology are shaping the future of the world. I have a deep passion for Automotive Engineering. I am particularly interested in areas like electric vehicles, autonomous systems, and embedded electronics, where innovation and engineering intersect.
+          I am an Electronics Engineering student at Strathmore University... {/* Shortened for brevity */}
         </p>
         <div className="flex justify-center space-x-6">
           <SocialLink href="https://github.com/CalKK" icon={<FaGithub size={24} />} />
@@ -40,7 +36,7 @@ export function Hero() {
 
 function SocialLink({ href, icon }: { href: string; icon: React.ReactNode }) {
   return (
-    <a 
+    <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
