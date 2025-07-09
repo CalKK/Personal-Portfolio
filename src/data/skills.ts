@@ -1,6 +1,16 @@
-import { FaTools, FaCube, FaMicrochip } from 'react-icons/fa';
+// ✅ Import React Icons
+import { IconType } from "react-icons";
+import { FaTools, FaCube, FaMicrochip } from "react-icons/fa";
 
-export const skills = [
+// ✅ Define the Skill interface
+export interface Skill {
+  name: string;
+  icon: IconType;
+  technologies: string[];
+}
+
+// ✅ Export typed skills list
+export const skills: Skill[] = [
   {
     name: "E-mobility",
     icon: FaTools,
