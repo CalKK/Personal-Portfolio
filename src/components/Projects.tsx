@@ -5,9 +5,7 @@ export function Projects() {
   return (
     <section id="projects" className="py-20 bg-gray-900">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-white mb-12 text-center">
-          Featured Projects
-        </h2>
+        <h2 className="text-4xl font-bold text-white mb-12 text-center">Featured Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} index={index} />
@@ -53,12 +51,7 @@ function ProjectCard({ title, description, tech, image, linkedIn, index }: {
         <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
         <div className="flex flex-wrap gap-2">
           {tech.map((item) => (
-            <span
-              key={item}
-              className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm"
-            >
-              {item}
-            </span>
+            <span key={item} className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">{item}</span>
           ))}
         </div>
       </div>
