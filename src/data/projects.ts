@@ -17,13 +17,4 @@ export const projects: Project[] = [
     image: "https://raw.githubusercontent.com/CalKK/CALKK_/main/AFTERLIFE%20LOGO.png",
     link: "https://github.com/CalKK/CALKK_/blob/main/AFTERLIFE%20LOGO.png",
     linkedIn: "https://www.linkedin.com/in/calvin-kinyanjui-95734222a/"
-  },
-  {
-    title: "Smart Fuel Adulteration Detection System",
-    description: "Smart Fuel Adulteration Detection System aims to create a system to ensure fuel purity and compliance with quality standards by detecting and preventing adulteration in real-time by leveraging on IoT infrastructure.",
-    tech: ["EasyEDA", "IoT"],
-    image: "https://raw.githubusercontent.com/CalKK/CALKK_/main/SMART%20FUEL%20ADULTERATION%20DETECTION%20SYSTEM.jpeg",
-    link: "https://github.com/CalKK/CALKK_/blob/main/SMART%20FUEL%20ADULTERATION%20DETECTION%20SYSTEM.jpeg",
-    linkedIn: "https://www.linkedin.com/in/calvin-kinyanjui-95734222a/"
-  }
-];
+  };
