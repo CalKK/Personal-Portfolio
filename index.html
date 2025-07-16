@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calvin Kinyanjui</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-grid"></div>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">CALVIN KINYANJUI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#sections" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">Electrical</span>
+                    <span class="title-line gradient-text"> & Electronics</span>
+                    <span class="title-line">Aspiring Engineer</span>
+                </h1>
+                <div class="hero-buttons">
+                    <a href="#sections" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <div class="btn-bg"></div>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Get In Touch</span>
+                        <div class="btn-bg"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="https://raw.githubusercontent.com/CalKK/personal-portfolio/main/face-card.jpeg" alt="Alex Morgan">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title-main">About</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead-text">
+                        Where technology meets community, I thrive. As a driven and visionary individual, I harness my expertise in 3D Modeling, Building Management Systems, and mentorship to craft innovative solutions. With a strong foundation in leadership, Arduino, and innovation challenges, I excel in spearheading projects, guiding teams, and empowering communities. My passion for excellence, collaboration, and creative problem-solving fuels my endeavors as a co-founder, tech innovator, and community leader.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Sections -->
+    <section id="sections" class="portfolio-sections">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title-main">Portfolio</h2>
+            </div>
+            
+            <!-- Section Navigation -->
+            <div class="section-nav">
+                <button class="section-btn active" data-section="honors">Honors & Awards</button>
+                <button class="section-btn" data-section="experience">Experience</button>
+                <button class="section-btn" data-section="skills">Skills</button>
+                <button class="section-btn" data-section="education">Education</button>
+                <button class="section-btn" data-section="certifications">Licenses & Certifications</button>
+                <button class="section-btn" data-section="projects">Projects</button>
+            </div>
+
+            <!-- Section Content -->
+            <div class="section-content">
+                <!-- Honors & Awards -->
+                <div class="content-panel active" id="honors">
+                    <div class="content-grid">
+                        <div class="content-card">
+                            <div class="card-icon">🏆</div>
+                            <h3>DISTINGUISHED DESIGN AWARD</h3>
+                            <p>Scooped the accolade for at the Power The Community Award Show on the 31st of May 2025 for the solution of "electricity as a service" (EaaS) integrating grid-tied (solar) & off-grid solutions (battery swapping).</p>
+                            <a href="#" class="card-link">View Certificate</a>
+                        </div>
+                        <div class="content-card">
+                            <div class="card-icon">🏆</div>
+                            <h3>LEADERSHIP AWARD</h3>
+                            <p>Awarded for having served a 3 year tenure as class representative of my class.</p>
+                            <a href="#" class="card-link">View Award</a>
+                        </div>
+                        <div class="content-card">
+                            <div class="card-icon">🏆</div>
+                            <h3>WED'25 SEMI-FINALISTS</h3>
+                            <p>Awarded for reaching the semi-finals of the competition of World Engineering Day 2025 by UNESCO.</p>
+                            <a href="#" class="card-link">Read More</a>
+                        </div>
+                        <div class="content-card">
+                            <div class="card-icon">🏆</div>
+                            <h3>VICTORS AT SCHEIDER ELECTRIC FOUNDATION NATIONALS</h3>
+                            <p>Emerged victorious at the inaugural Enactus Kenya & Scheider Electric Battery Innovation Challenge on 13th September 2024.</p>
+                            <a href="#" class="card-link">View Certificate</a>
+                    </div>
+                    <div class="content-card">
+                            <div class="card-icon">🏆</div>
+                            <h3>VICTORS AT KSYP</h3>
+                            <p>Emerged victorious at the Kenya Student Young Professionals smart living conference on 8th November 2024.</p>
+                            <a href="#" class="card-link">View Certificate</a>
+                    </div>
+                    <div class="content-card">
+                            <div class="card-icon">🏆</div>
+                            <h3>1ST RUNNERS UP</h3>
+                            <p>Awarded for emerging 1st runners up in the Higher Education Partnerships in Sub-Saharan Africa (HEP-SSA) Innovation Challenge 2023 driven by the Royal Academy of Engineering on 23rd November 2023.</p>
+                            <a href="#" class="card-link">View Certificate</a> 
+                    </div>
+                    <div class="content-card">
+                            <div class="card-icon">🏆</div>
+                            <h3>1ST RUNNERS UP</h3>
+                            <p>Awarded for emerging 1st runners up in the inaugural ideas fest that was staged in Strathmore University in 2022 for presenting a project proposal titled, "Smart Stima" with my team members on 9th December 2022.</p>
+                            <a href="#" class="card-link">View Certificate</a>
+                     </div> 
+                     <div class="content-card">
+                            <div class="card-icon">🏆</div>
+                            <h3>IEEE ENTREPRENEURSHIP SUMMIT AWARD</h3>
+                            <p>One of 10 startups selected to pitch at the IEEE Entrepreneurship summit.</p>
+                            <a href="#" class="card-link">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="content-panel" id="experience">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">June 2025 - Present</div>
+                            <div class="timeline-content">
+                                <h3>EX-OFFICIO ESA BOARD ADVISOR</h3>
+                                <h4>Strathmore Computing and Engineering Students Association (SCESA)</h4>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">June 2024 - Present</div>
+                            <div class="timeline-content">
+                                <h3>CO-FOUNDER & CPO</h3>
+                                <h4>Afterlife Innovations</h4>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">May 2023 - Dec 2024</div>
+                            <div class="timeline-content">
+                                <h3>CHAIR & CTO</h3>
+                                <h4>IET Strathmore Chapter</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Skills -->
+                <div class="content-panel" id="skills">
+                    <div class="skills-categories">
+                        <div class="skill-category">
+                            <h3>3D MODELING</h3>
+                        </div>
+                        <div class="skill-category">
+                            <h3>BMS MODELING</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="content-panel" id="education">
+                    <div class="education-list">
+                        <div class="education-item">
+                            <div class="education-icon">📚</div>
+                            <div class="education-content">
+                                <h3>BSc. Electrical and Electronics Engineering</h3>
+                                <h4>Strathmore University</h4>
+                                <p class="education-date">2021 - 2026</p>
+                            </div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-icon">📚</div>
+                            <div class="education-content">
+                                <h3>High School Diploma</h3>
+                                <h4>Strathmore School</h4>
+                                <p class="education-date">2017 - 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="content-panel" id="certifications">
+                    <div class="cert-grid">
+                        <div class="cert-card">
+                            <h3>POWER THE COMMUNITY</h3>
+                            <p class="cert-issuer">AEnergy Mentors</p>
+                            <a href="https://drive.google.com/file/d/1-UP6TDLO0SN7R3N3MPp4bdWWvWA5xC47/view" class="cert-link">Verify Certificate</a>
+                        </div>
+                        <div class="cert-card">
+                            <h3>WED 2025</h3>
+                            <p class="cert-issuer">UNESCO</p>
+                            <a href="https://credsverse.com/credentials/0284c381-2d70-40f0-a633-0de7aa816376" class="cert-link">Verify Certificate</a>
+                        </div>
+                        <div class="cert-card">
+                            <h3>HEP SSA INNOVATION CHALLENGE</h3>
+                            <p class="cert-issuer">Royal Academy of Engineering</p>
+                            <a href="https://drive.google.com/file/d/1ZClAeH3-ZjzdYULbqIR5g3ahkp12HdXn/view" class="cert-link">Verify Certificate</a>
+                        </div>
+                        <div class="cert-card">
+                            <h3>LEADERSHIP</h3>
+                            <p class="cert-issuer">Strathmore University</p>
+                            <a href="https://drive.google.com/file/d/1XwUE75JbAbnKZbujL-hxMXq1PqprlG92/view" class="cert-link">Verify Certificate</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div class="content-panel" id="projects">
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://raw.githubusercontent.com/CalKK/personal-portfolio/main/AFTERLIFE INNOVATIONS LOGO.png" alt="Startup">
+                            </div>
+                            <div class="project-content">
+                                <h3>Afterlife Innovations</h3>
+                                <p>At Afterlife Innovations, we believe every battery—whether it’s powering an electric vehicle, your smartphone, home solar setup or even a vintage gadget—deserves a second life. Through our nationwide network of collection, repurposing and recycling, we turn both new and spent batteries into ready-to-use energy solutions and recover their valuable materials. No battery is left behind: we keep power flowing, cut down on e-waste and protect communities by making sure every cell is reused or responsibly recycled. By breathing new life into yesterday’s batteries, we’re building a cleaner planet and fueling a truly circular economy.</p>
+                                <div class="project-links">
+                                    <a href="https://afterlife3.odoo.com" class="project-link">View</a>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title-main">Contact</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <span>📧</span>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:alex.morgan@email.com" class="contact-link">calvinkinyanjui017@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <span>📱</span>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <a href="tel:+15551234567" class="contact-link">+254 796 120248</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <span>📍</span>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Nairobi, Kenya</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <h3 class="social-heading">Connect with me</h3>
+                        <div class="social-links-container">
+                            <a href="https://www.linkedin.com/in/calvin-kinyanjui-95734222a/" class="social-link">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                                LinkedIn
+                            </a>
+                            <a href="https://github.com/dashboard" class="social-link">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CV Attachment Block -->
+     <div class="cv-attachment-block">
+       <h3>Download My CV</h3>
+         <a href="https://raw.githubusercontent.com/CalKK/personal-portfolio/main/CV_FOR_CALVIN_KINYANJUI.pdf" target="_blank" download>
+           <button class="cv-download-btn">
+             <i class="fas fa-file-download"></i> Download CV
+           </button>
+     </div>
+    </section>
+
+    <!-- Quick Links Navigation -->
+    <div class="quick-links">
+        <div class="container">
+            <div class="quick-links-content">
+                <h3 class="quick-links-title">Quick Navigation</h3>
+                <div class="quick-links-grid">
+                    <a href="#home" class="quick-link">
+                        <div class="quick-link-icon">🏠</div>
+                        <span>Home</span>
+                    </a>
+                    <a href="#about" class="quick-link">
+                        <div class="quick-link-icon">👤</div>
+                        <span>About</span>
+                    </a>
+                    <a href="#sections" class="quick-link">
+                        <div class="quick-link-icon">💼</div>
+                        <span>Portfolio</span>
+                    </a>
+                    <a href="#contact" class="quick-link">
+                        <div class="quick-link-icon">📧</div>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <span class="logo-text">CALVIN KINYANJUI</span>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <p>&copy; 2025 Calvin Kinyanjui. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
