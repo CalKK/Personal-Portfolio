@@ -69,17 +69,14 @@ sectionBtns.forEach(btn => {
         
         // Add active class to clicked button and corresponding panel
         btn.classList.add('active');
-        const targetPanel = document.getElementById(targetSection);
+        const targetPanel = document.querySelector(`.content-panel#${targetSection}`);
         if (targetPanel) {
             targetPanel.classList.add('active');
         }
         
-        // Animate skill bars if skills section is active
-        if (targetSection === 'skills') {
-            setTimeout(() => {
-                animateSkillBars();
-            }, 300);
-        }
+        // Scroll to the target section
+        const targetOffset = document.querySelector(`.content-panel#${targetSection}`).offsetTop;
+        window.scrollTo({ top: targetOffset - 80, behavior: 'smooth' });
     });
 });
 
