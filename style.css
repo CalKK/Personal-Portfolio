@@ -1145,44 +1145,69 @@ section {
 }
 
 .quick-links-grid {
-/* Modified CSS for Quick Links Grid */
-.quick-links-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Changed to 2 columns for square layout on larger screens */
-    gap: var(--space-md);
-    max-width: 800px;
-    margin: 0 auto;
-    grid-auto-rows: 200px; /* Set a fixed height for each grid item */
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: var(--space-xl);
+max-width: 800px;
+margin: 0 auto;
 }
 
-/* Modified CSS for Quick Link */
 .quick-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-md);
-    background: var(--bg-glass);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-xl);
-    text-decoration: none;
-    color: var(--text-secondary);
-    backdrop-filter: blur(20px);
-    transition: all var(--transition-normal);
-    position: relative;
-    overflow: hidden;
-    height: 100%; /* Make the link take up the full height of the grid cell */
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: var(--space-md);
+padding: var(--space-xl);
+background: var(--bg-glass);
+border: 1px solid var(--border);
+border-radius: var(--radius-xl);
+text-decoration: none;
+color: var(--text-secondary);
+backdrop-filter: blur(20px);
+transition: all var(--transition-normal);
+position: relative;
+overflow: hidden;
 }
 
-/* Optional: Center the quick link icon and text horizontally and vertically */
+.quick-link::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: var(--gradient-primary);
+opacity: 0.1;
+transition: left var(--transition-normal);
+z-index: 1;
+}
+
+.quick-link:hover::before {
+left: 0;
+}
+
+.quick-link:hover {
+border-color: var(--primary);
+color: var(--text-primary);
+transform: translateY(-5px);
+box-shadow: var(--shadow-lg);
+}
+
 .quick-link-icon {
-    font-size: 2rem;
-    margin-bottom: var(--space-sm);
+font-size: 2rem;
+position: relative;
+z-index: 2;
+transition: transform var(--transition-normal);
+}
+
+.quick-link:hover .quick-link-icon {
+transform: scale(1.1);
 }
 
 .quick-link span {
-    font-weight: 500;
-    font-size: 1rem; /* Adjust the font size as needed */
+font-weight: 500;
+position: relative;
+z-index: 2;
 }
 
 /* Footer */
