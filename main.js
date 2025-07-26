@@ -61,6 +61,8 @@ const contentPanels = document.querySelectorAll('.content-panel');
 
 sectionBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+        // Close mobile menu when section button is clicked
+        navMenu.classList.remove('active');
         const targetSection = btn.getAttribute('data-section');
         
         // Remove active class from all buttons and panels
