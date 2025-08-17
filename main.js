@@ -2,14 +2,18 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+}
 
 // Close mobile menu when clicking on links
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
+        if (navMenu) {
+            navMenu.classList.remove('active');
+        }
     });
 });
 
@@ -30,122 +34,137 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Navbar background on scroll
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        nav.style.background = 'rgba(10, 10, 10, 0.95)';
-        nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
-    } else {
-        nav.style.background = 'rgba(10, 10, 10, 0.8)';
-        nav.style.boxShadow = 'none';
+    if (nav) {
+        if (window.scrollY > 50) {
+            nav.style.background = 'rgba(10, 10, 10, 0.95)';
+            nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+        } else {
+            nav.style.background = 'rgba(10, 10, 10, 0.8)';
+            nav.style.boxShadow = 'none';
+        }
     }
 });
 
-// Quick Links smooth scrolling
-document.querySelectorAll('.quick-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        
-        if (targetSection) {
-            targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+// Portfolio Section Navigation - MAIN FUNCTIONALITY
+function initializePortfolioNavigation() {
+    console.log('Initializing portfolio navigation...');
+    
+    const sectionBtns = document.querySelectorAll('.section-btn');
+    const contentPanels = document.querySelectorAll('.content-panel');
+    
+    console.log('Found section buttons:', sectionBtns.length);
+    console.log('Found content panels:', contentPanels.length);
+    
+    // Log all button data-section values
+    sectionBtns.forEach((btn, index) => {
+        console.log(`Button ${index}:`, btn.getAttribute('data-section'));
+    });
+    
+    // Log all panel IDs
+    contentPanels.forEach((panel, index) => {
+        console.log(`Panel ${index}:`, panel.id);
+    });
+    
+    // Add click event to each button
+    sectionBtns.forEach((btn, index) => {
+        btn.addEventListener('click', function() {
+            const targetSection = this.getAttribute('data-section');
+            console.log(`Button ${index} clicked! Target section:`, targetSection);
+            
+            // Remove active class from all buttons
+            sectionBtns.forEach(b => {
+                b.classList.remove('active');
+                console.log('Removed active from button:', b.getAttribute('data-section'));
             });
-        }
+            
+            // Remove active class from all panels
+            contentPanels.forEach(panel => {
+                panel.classList.remove('active');
+                console.log('Removed active from panel:', panel.id);
+            });
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            console.log('Added active to button:', targetSection);
+            
+            // Find and activate the target panel
+            const targetPanel = document.getElementById(targetSection);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+                console.log('Added active to panel:', targetSection);
+                
+                // Animate skill bars if skills section
+                if (targetSection === 'skills') {
+                    setTimeout(() => {
+                        animateSkillBars();
+                    }, 300);
+                }
+            } else {
+                console.error('Target panel not found:', targetSection);
+            }
+        });
     });
-});
-
-// Section Navigation
-const sectionBtns = document.querySelectorAll('.section-btn');
-const contentPanels = document.querySelectorAll('.content-panel');
-
-console.log('Section buttons found:', sectionBtns.length);
-console.log('Content panels found:', contentPanels.length);
-
-sectionBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const targetSection = btn.getAttribute('data-section');
-        console.log('Button clicked:', targetSection);
-        
-        // Remove active class from all buttons and panels
-        sectionBtns.forEach(b => b.classList.remove('active'));
-        contentPanels.forEach(panel => panel.classList.remove('active'));
-        
-        // Add active class to clicked button and corresponding panel
-        btn.classList.add('active');
-        const targetPanel = document.getElementById(targetSection);
-        console.log('Target panel found:', targetPanel);
-        
-        if (targetPanel) {
-            targetPanel.classList.add('active');
-            console.log('Panel activated:', targetSection);
-        }
-        
-        // Animate skill bars if skills section is active
-        if (targetSection === 'skills') {
-            setTimeout(() => {
-                animateSkillBars();
-            }, 300);
-        }
-    });
-});
+    
+    // Set initial active section (honors)
+    const initialBtn = document.querySelector('.section-btn[data-section="honors"]');
+    const initialPanel = document.getElementById('honors');
+    
+    if (initialBtn && initialPanel) {
+        initialBtn.classList.add('active');
+        initialPanel.classList.add('active');
+        console.log('Set initial active section: honors');
+    } else {
+        console.error('Could not find initial button or panel');
+    }
+}
 
 // Animate skill bars
 function animateSkillBars() {
+    console.log('Animating skill bars...');
     const skillBars = document.querySelectorAll('.skill-progress');
+    
     skillBars.forEach(bar => {
         const width = bar.getAttribute('data-width');
-        bar.style.width = '0%'; // Reset first
+        console.log('Animating skill bar to width:', width);
+        
+        // Reset first
+        bar.style.width = '0%';
+        
+        // Animate after a short delay
         setTimeout(() => {
             bar.style.width = width + '%';
-        }, 200);
+        }, 100);
     });
 }
 
-// Initialize the first section as active
-document.addEventListener('DOMContentLoaded', () => {
-    // Ensure honors section is active by default
-    const honorsBtn = document.querySelector('.section-btn[data-section="honors"]');
-    const honorsPanel = document.getElementById('honors');
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded - Initializing...');
     
-    if (honorsBtn && honorsPanel) {
-        honorsBtn.classList.add('active');
-        honorsPanel.classList.add('active');
-    }
+    // Initialize portfolio navigation
+    initializePortfolioNavigation();
     
-    // Initialize other animations
+    // Initialize scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Add scroll animation to elements
     const elementsToAnimate = document.querySelectorAll('.content-card, .timeline-item, .education-item, .cert-card, .project-card');
     
     elementsToAnimate.forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);
     });
-});
-// Scroll animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
-
-// Add scroll animation to elements
-document.addEventListener('DOMContentLoaded', () => {
-    const elementsToAnimate = document.querySelectorAll('.content-card, .timeline-item, .education-item, .cert-card, .project-card');
-    
-    elementsToAnimate.forEach(el => {
-        el.classList.add('fade-in');
-        observer.observe(el);
-    });
-    
-    // Initialize skill bars animation for the first load
-    setTimeout(animateSkillBars, 1000);
 });
 
 // Typing effect for hero title
